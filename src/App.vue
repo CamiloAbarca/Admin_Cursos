@@ -1,10 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <b-navbar toggleable="lg" class="custom-navbar">
+      <b-navbar-brand>Cursos AlfaWeb</b-navbar-brand>
+
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item href="/"><b-icon icon="house-door-fill"></b-icon></b-nav-item>
+          <b-nav-item href="/admin"><b-icon icon="wrench"></b-icon></b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <router-view />
   </div>
 </template>
 
@@ -14,19 +22,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+.custom-navbar {
+  background-color: #6a1b9a;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-content: space-between;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.custom-navbar .navbar-nav .nav-link {
+  color: white;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.custom-navbar .navbar-brand {
+  color: white;
 }
 </style>
